@@ -3,4 +3,5 @@
 type TNavMenu = {
   id: number;
   title: string;
+  link: string;
 };
