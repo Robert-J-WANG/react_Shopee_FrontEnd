@@ -1,11 +1,10 @@
 {
   "compilerOptions": {
-    // 配置@路径
+    //添加这些 配置
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     },
-
     "target": "ES2020",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],

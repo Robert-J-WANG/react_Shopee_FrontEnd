@@ -25,7 +25,7 @@ export default {
         "4xl": "2400px",
       },
       colors: {
-        textColor: "#c1d3cf",
+        textColor: "#15171c",
         bgColor: "#1c1e26",
         bgColorHeader: "rgba(45, 49, 57 .3)",
         mainColor: "#9feaad",
@@ -34,6 +34,10 @@ export default {
         subColor2: "#8be1e4",
         subBgColor: "rgba(96, 121, 153,.2)",
         subBdColor: "rgba(96, 121, 153,.6)",
+      },
+
+      boxShadow: {
+        "3xl": "0 2px 6px -4px black",
       },
     },
   },

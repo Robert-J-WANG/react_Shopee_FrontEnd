@@ -72,7 +72,7 @@
 
 + ##### 设置自定义样式
 
-    tailwind.config.js文件中设置，如下。 直接走组件中使用即可
+    tailwind.config.js文件中设置，如下。 组件中直接使用即可
 
     ```js
     /** @type {import('tailwindcss').Config} */
@@ -119,6 +119,57 @@
       },
       plugins: [require("daisyui")],  // 使用ui组件库
     };
+    ```
+
+#### 3. Zustand bug问题
+
++ 最新版本的zustand(4.4.5)使用中间件时，ts类型报错
+
+    ```ts
+    import { create } from "zustand";
+    import { immer } from "zustand/middleware/immer";
+    import { devtools, persist, subscribeWithSelector } from "zustand/middleware";
+    
+    const initState = {
+      cartItems: [] as TNavMen[],
+      active: false,
+    };
+    
+    export const useNavMenuStore = create<typeof initState>()(
+      immer(
+        devtools(
+          subscribeWithSelector(
+            persist(() => initState, {
+              name: "navMenu state",
+            })
+          ),
+          {
+            name: "cnavMenu state",
+          }
+        )
+      )
+    );
+    ```
+
+    ts类型报错如下，没有找到解决方案
+
+    ```ts
+    Argument of type 'StateCreator<{ cartItems: TNavMen[]; active: boolean; }, [], [["zustand/immer", never], ["zustand/devtools", never], ["zustand/subscribeWithSelector", never], ["zustand/persist", { ...; }]]>' is not assignable to parameter of type 'StateCreator<{ cartItems: TNavMen[]; active: boolean; }, [], [never, unknown][]>'.ts(2345)
+    Argument of type 'StateCreator<{ cartItems: TNavMen[]; active: boolean; }, [], [["zustand/immer", never], ["zustand/devtools", never], ["zustand/subscribeWithSelector", never], ["zustand/persist", { ...; }]]>' is not assignable to parameter of type 'StateCreator<{ cartItems: TNavMen[]; active: boolean; }, [], [never, unknown][]>'.
+      Type 'StateCreator<{ cartItems: TNavMen[]; active: boolean; }, [], [["zustand/immer", never], ["zustand/devtools", never], ["zustand/subscribeWithSelector", never], ["zustand/persist", { ...; }]]>' is not assignable to type '{ $$storeMutators?: [never, unknown][] | undefined; }'.
+        Types of property '$$storeMutators' are incompatible.
+          Type '[["zustand/immer", never], ["zustand/devtools", never], ["zustand/subscribeWithSelector", never], ["zustand/persist", { cartItems: TNavMen[]; active: boolean; }]] | undefined' is not assignable to type '[never, unknown][] | undefined'.
+            Type '[["zustand/immer", never], ["zustand/devtools", never], ["zustand/subscribeWithSelector", never], ["zustand/persist", { cartItems: TNavMen[]; active: boolean; }]]' is not assignable to type '[never, unknown][]'.
+              Type '["zustand/devtools", never] | ["zustand/immer", never] | ["zustand/subscribeWithSelector", never] | ["zustand/persist", { cartItems: TNavMen[]; active: boolean; }]' is not assignable to type '[never, unknown]'.
+                Type '["zustand/devtools", never]' is not assignable to type '[never, unknown]'.
+                  Type at position 0 in source is not compatible with type at position 0 in target.
+                    Type 'string' is not assignable to type 'never'.ts(2345)
+    ```
+
++ 重新安装低版本的Zustand（4.4.4），没有ts类型错误
+
+    ```bash
+    yarn add zustand@4.4.4
     ```
 
     

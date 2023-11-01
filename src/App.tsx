@@ -1,9 +1,10 @@
+import { Navbar } from "@/components/Navbar";
+
 function App() {
   return (
     <>
-      <div className="container bg-subColor">
-        <div className="text-9xl text-textColor ">hello</div>
-        <div className="text-9xl text-mainColor">hello</div>
+      <div className="container">
+        <Navbar />
       </div>
     </>
   );
