@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ----------------------- 设置基础样式 ----------------------- */
+@layer base {
+
+   /* 设置全局样式 */
+   * {
+    @apply m-0 p-0 box-border 
+  }
+  
+  body{
+    @apply min-h-screen w-full bg-gradient-to-br from-white to-stone-500 
+    
+  }
+}
