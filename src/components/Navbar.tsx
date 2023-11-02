@@ -13,12 +13,14 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <div className=" shadow-3xl">
-      <div className="container flex items-center justify-around p-4">
+    <div className="bg-gray-100 shadow-3xl">
+      <div className="container h-[90px] flex items-center justify-around p-4">
         {/* logo */}
         <div className="gap-4 text-4xl font-black cursor-pointer flex-center-between text-textColor">
           <img src={logo} alt="/" />
-          <p>SHOPEE</p>
+          <p className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-textColor ">
+            SHOPIA
+          </p>
         </div>
         {/* nav-menu */}
         <ul className="gap-12 text-3xl font-bold text-gray-600 cursor-pointer flex-center-between">

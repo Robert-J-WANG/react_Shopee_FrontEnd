@@ -3,13 +3,13 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     container: {
-      padding: {
-        DEFAULT: "1rem",
-        sm: "2rem",
-        lg: "4rem",
-        xl: "5rem",
-        "2xl": "6rem",
-      },
+      // padding: {
+      //   DEFAULT: "1rem",
+      //   sm: "2rem",
+      //   lg: "4rem",
+      //   xl: "5rem",
+      //   "3xl": "6rem",
+      // },
       center: true,
     },
 
@@ -37,7 +37,7 @@ export default {
       },
 
       boxShadow: {
-        "3xl": "0 2px 6px -4px black",
+        "3xl": "0 -4px 6px -4px gray inset",
       },
     },
   },
