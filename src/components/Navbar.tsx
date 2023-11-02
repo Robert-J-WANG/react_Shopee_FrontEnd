@@ -25,8 +25,8 @@ export const Navbar = () => {
         {/* nav-menu */}
         <ul className="gap-12 text-3xl font-bold text-gray-600 cursor-pointer flex-center-between">
           {navMenuItems.map((navItem) => (
-            <Link to={navItem.link}>
-              <li key={navItem.id} onClick={() => toggleNavMenu(navItem.title)}>
+            <Link to={navItem.link} key={navItem.id}>
+              <li onClick={() => toggleNavMenu(navItem.title)}>
                 {navItem.title}
                 <hr
                   className={`h-1 mt-1 bg-red-500 rounded-sm ${
