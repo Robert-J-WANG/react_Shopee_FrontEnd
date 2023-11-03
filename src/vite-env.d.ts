@@ -21,3 +21,15 @@ type TShopItem = {
   new_price: number;
   old_price: number;
 };
+
+type TProductItem = {
+  id: number;
+  name: string;
+  category: string;
+  image: string;
+  new_price: number;
+  old_price: number;
+  desc: string;
+  tags: string;
+  size: string;
+};

@@ -1,31 +1,26 @@
+import { BreadCrumbs } from "@/components/BreadCrumbs";
+import { ProductDisplay } from "@/components/ProductDisplay";
+import { setcurrentProduct } from "@/stores/productStore";
 import { useShopStore } from "@/stores/shopState";
-import { Link, useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 export const Product = () => {
-  const productId = useParams().productId;
+  const { productId } = useParams();
   const currentProduct = useShopStore((state) => state.initItems)!.find(
     (item) => item.id === parseInt(productId!)
   );
+
+  useEffect(() => {
+    setcurrentProduct(currentProduct!);
+  }, []);
   return (
     <div>
-      <div className="container flex py-10 ">
+      <div className="container py-10 ">
         {/* breadcrumbs */}
-        <div className="text-lg breadcrumbs ">
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/">Shop</Link>
-            </li>
-            <li>
-              <Link to={`/${currentProduct!.category}`}>
-                {currentProduct!.category}
-              </Link>
-            </li>
-            <li>{currentProduct!.name}</li>
-          </ul>
-        </div>
+        <BreadCrumbs />
+        {/* product details */}
+        <ProductDisplay />
       </div>
     </div>
   );
