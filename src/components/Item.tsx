@@ -1,4 +1,5 @@
 import { formatCurrency } from "@/utils/formatCurrency";
+import { Link } from "react-router-dom";
 
 type Tprops = {
   item: TItem;
@@ -6,24 +7,26 @@ type Tprops = {
 
 export const Item = ({ item }: Tprops) => {
   return (
-    <div className="shadow-xl card max-w-[350px] bg-base-100 hover:scale-105 duration-500 cursor-pointer">
-      <figure>
-        <img src={item?.image} alt="Shoes" className="object-cover w-full" />
-      </figure>
-      <div className="card-body">
-        <h2 className="card-title">
-          {item?.name}
-          <div className="badge badge-secondary">NEW</div>
-        </h2>
-        <div className="justify-end card-actions">
-          <div className="text-lg badge badge-outline">
-            {formatCurrency(item?.new_price)}
-          </div>
-          <div className="text-lg text-gray-300 line-through badge badge-outline">
-            {formatCurrency(item?.old_price)}
+    <Link to={`/product/${item.id}`}>
+      <div className="shadow-xl card max-w-[350px] bg-base-100 hover:scale-105 duration-500 cursor-pointer">
+        <figure>
+          <img src={item?.image} alt="Shoes" className="object-cover w-full" />
+        </figure>
+        <div className="card-body">
+          <h2 className="card-title">
+            {item?.name}
+            <div className="badge badge-secondary">NEW</div>
+          </h2>
+          <div className="justify-end card-actions">
+            <div className="text-lg badge badge-outline">
+              {formatCurrency(item?.new_price)}
+            </div>
+            <div className="text-lg text-gray-300 line-through badge badge-outline">
+              {formatCurrency(item?.old_price)}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };

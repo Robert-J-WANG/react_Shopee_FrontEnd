@@ -4,7 +4,6 @@ import { setInitData, usePopularStore } from "@/stores/popularStore";
 
 export const Popular = () => {
   const initItems = usePopularStore((state) => state.initItems);
-  console.log(initItems);
   useEffect(() => {
     setInitData();
   }, []);

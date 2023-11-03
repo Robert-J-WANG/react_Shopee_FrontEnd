@@ -4,7 +4,6 @@ import { setInitData, useCollectionStore } from "@/stores/collectionStore";
 
 export const NewCollections = () => {
   const initItems = useCollectionStore((state) => state.initItems);
-  console.log(initItems);
   useEffect(() => {
     setInitData();
   }, []);
