@@ -10,12 +10,9 @@
     @apply m-0 p-0 box-border 
   }
 
-  body{
-    font-family: 'Roboto', sans-serif;
-  }
   
   body{
-    @apply min-h-screen w-full 
+    @apply min-h-screen w-full font-['Roboto'] bg-gray-200
     /* bg-gradient-to-br from-white to-stone-500  */
     
   }

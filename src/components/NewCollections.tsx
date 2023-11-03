@@ -16,7 +16,7 @@ export const NewCollections = () => {
         <progress className="w-56 progress"></progress>
       </div>
       {/* item list */}
-      <div className="flex flex-wrap justify-between gap-10 my-10 ">
+      <div className="grid justify-center gap-10 mb-10 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 place-content-center place-items-center ">
         {initItems!.map((item) => (
           <Item key={item.id} item={item} />
         ))}

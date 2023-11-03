@@ -6,7 +6,7 @@ type Tprops = {
 
 export const Item = ({ item }: Tprops) => {
   return (
-    <div className="shadow-xl card w-[350px] bg-base-100">
+    <div className="shadow-xl card max-w-[350px] bg-base-100 hover:scale-105 duration-500 cursor-pointer">
       <figure>
         <img src={item?.image} alt="Shoes" className="object-cover w-full" />
       </figure>

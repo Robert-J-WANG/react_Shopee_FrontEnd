@@ -19,7 +19,7 @@ export const Navbar = () => {
         <div className="gap-4 text-4xl font-black cursor-pointer flex-center-between text-textColor">
           <img src={logo} alt="/" />
           <p className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-textColor ">
-            SHOPIA
+            SHOPPIA
           </p>
         </div>
         {/* nav-menu */}
