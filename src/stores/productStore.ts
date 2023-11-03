@@ -5,7 +5,13 @@ import { devtools, persist, subscribeWithSelector } from "zustand/middleware";
 const initState = {
   initItems: {} as TProductItem,
   selectedSize: "",
-  sizeOptions: [{ id: 1, size: "S" }],
+  sizeOptions: [
+    { id: 1, size: "S" },
+    { id: 2, size: "M" },
+    { id: 3, size: "L" },
+    { id: 4, size: "XL" },
+    { id: 5, size: "XXL" },
+  ],
 };
 
 export const useProductStore = create<typeof initState>()(
@@ -24,9 +30,7 @@ export const useProductStore = create<typeof initState>()(
 );
 
 export const setcurrentProduct = (currentProduct: TShopItem) => {
-  // const { id, name, category, image, new_price, old_price } = currentProduct;
   useProductStore.setState((state) => {
-    // const { initItems } = state;
     state.initItems = {
       ...currentProduct,
       tags: "sfd",
