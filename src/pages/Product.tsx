@@ -1,4 +1,5 @@
 import { BreadCrumbs } from "@/components/BreadCrumbs";
+import { Description } from "@/components/Description";
 import { ProductDisplay } from "@/components/ProductDisplay";
 import { setcurrentProduct } from "@/stores/productStore";
 import { useShopStore } from "@/stores/shopState";
@@ -21,6 +22,7 @@ export const Product = () => {
         <BreadCrumbs />
         {/* product details */}
         <ProductDisplay />
+        <Description />
       </div>
     </div>
   );

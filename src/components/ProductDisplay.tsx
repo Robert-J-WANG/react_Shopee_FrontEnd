@@ -68,7 +68,7 @@ export const ProductDisplay = () => {
             {sizeOptions.map((sizeOption) => (
               <p
                 key={sizeOption.id}
-                className="flex items-center justify-center w-10 h-10 border border-gray-500 rounded-lg cursor-pointer"
+                className="flex items-center justify-center w-12 h-12 border border-gray-500 rounded-lg cursor-pointer"
               >
                 <span>{sizeOption.size}</span>
               </p>

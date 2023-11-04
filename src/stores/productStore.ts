@@ -12,6 +12,7 @@ const initState = {
     { id: 4, size: "XL" },
     { id: 5, size: "XXL" },
   ],
+  tabActive: "",
 };
 
 export const useProductStore = create<typeof initState>()(
@@ -37,5 +38,17 @@ export const setcurrentProduct = (currentProduct: TShopItem) => {
       desc: "asdfasdfasd",
       size: state.selectedSize,
     };
+  });
+};
+export const activeTabs = (e: React.MouseEvent) => {
+  const target = e.target as HTMLAnchorElement;
+
+  target.parentNode
+    ?.querySelectorAll("a")
+    .forEach((a) => a.classList.remove("tab-active"));
+  target.classList.add("tab-active");
+
+  useProductStore.setState((state) => {
+    state.tabActive = target.innerText;
   });
 };
