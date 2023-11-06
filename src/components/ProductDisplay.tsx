@@ -1,9 +1,10 @@
-import { useProductStore } from "@/stores/productStore";
+import { selectSize, useProductStore } from "@/stores/productStore";
 import { formatCurrency } from "@/utils/formatCurrency";
 
 export const ProductDisplay = () => {
   const currentProduct = useProductStore((state) => state.initItems);
   const sizeOptions = useProductStore((state) => state.sizeOptions);
+  const selectedSize = useProductStore((state) => state.selectedSize);
   return (
     <div className="flex items-center justify-between gap-5 py-10 text-xl">
       {/* left */}
@@ -68,7 +69,14 @@ export const ProductDisplay = () => {
             {sizeOptions.map((sizeOption) => (
               <p
                 key={sizeOption.id}
-                className="flex items-center justify-center w-12 h-12 border border-gray-500 rounded-lg cursor-pointer"
+                className={`flex items-center justify-center w-12 h-12  rounded-lg cursor-pointer 
+                  ${
+                    sizeOption.size === selectedSize
+                      ? "border-gray-800 border-2 text-black"
+                      : "border-gray-500 border text-gray-500"
+                  }
+                `}
+                onClick={() => selectSize(sizeOption.size)}
               >
                 <span>{sizeOption.size}</span>
               </p>

@@ -52,3 +52,9 @@ export const activeTabs = (e: React.MouseEvent) => {
     state.tabActive = target.innerText;
   });
 };
+
+export const selectSize = (size: string) => {
+  useProductStore.setState((state) => {
+    state.selectedSize = size;
+  });
+};
