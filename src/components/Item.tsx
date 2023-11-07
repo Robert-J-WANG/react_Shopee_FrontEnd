@@ -7,7 +7,10 @@ type Tprops = {
 
 export const Item = ({ item }: Tprops) => {
   return (
-    <Link to={`/product/${item.id}`} onClick={() => window.scrollTo(0, 0)}>
+    <Link
+      to={`/react_Shoppia/product/${item.id}`}
+      onClick={() => window.scrollTo(0, 0)}
+    >
       <div className="shadow-xl card max-w-[350px] bg-base-100 hover:scale-105 duration-500 cursor-pointer">
         <figure>
           <img src={item?.image} alt="Shoes" className="object-cover w-full" />

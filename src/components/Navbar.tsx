@@ -41,14 +41,14 @@ export const Navbar = () => {
 
         <div className="gap-2 md:gap-4 lg:gap-6 xl:gap-8 flex-center-between">
           {/* login-button */}
-          <Link to="/loginSignup">
+          <Link to="/react_Shoppia/loginSignup">
             <button className="w-16 rounded-full md:w-20 lg:w-28 xl:w-36 md:text-lg lg:text-xl xl:text-2xl btn btn-outline">
               Login
             </button>
           </Link>
 
           {/* cart */}
-          <Link to="/cart">
+          <Link to="/react_Shoppia/cart">
             <img
               src={cart_icon}
               alt="/"

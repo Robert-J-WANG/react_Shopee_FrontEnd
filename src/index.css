@@ -19,4 +19,8 @@
   .flex-center-between{
     @apply flex items-center justify-between
   }
+  table,tr,th,td{
+    text-align: center !important;
+    padding: 5px 5px !important;
+  }
 }

@@ -17,7 +17,7 @@ export const Login = () => {
       <button className="text-lg btn btn-error">Continue</button>
       <p>
         Create an account?{" "}
-        <Link to="/loginSignup/signUp" className="text-red-500">
+        <Link to="/react_Shoppia/loginSignup/signUp" className="text-red-500">
           Click here
         </Link>
       </p>

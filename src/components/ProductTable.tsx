@@ -21,9 +21,9 @@ export const ProductTable = () => {
         </thead>
         <tbody>
           {cartItems.map((cartItem) => (
-            <tr key={cartItem.id}>
+            <tr className="text-center" key={cartItem.id}>
               <td>
-                <div className="flex items-center">
+                <div className="flex items-center justify-center">
                   <div className="avatar">
                     <div className="w-14 mask mask-squircle">
                       <img src={cartItem.image} alt="/" />
@@ -51,13 +51,14 @@ export const ProductTable = () => {
                   </button>
                 </div>
               </td>
-              <td className="hidden md:block">
+              <td className="hidden h-full md:table-cell">
                 {formatCurrency(cartItem.price * cartItem.count)}
               </td>
               <td>
                 <CiSquareRemove
                   size={40}
                   onClick={() => removeItem(cartItem.id)}
+                  className="items-center mx-auto"
                 />
               </td>
             </tr>
