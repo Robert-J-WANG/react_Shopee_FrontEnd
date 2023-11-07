@@ -3,13 +3,18 @@ import { useCartStore } from "@/stores/cartStore";
 import { formatCurrency } from "@/utils/formatCurrency";
 
 export const Cart = () => {
+  const initItems = useCartStore((state) => state.initItems);
   const totalPrice = useCartStore((state) => state.totalPrice);
   const shipFees = useCartStore((state) => state.shipFees);
   return (
     <div className="container py-10 ">
       {/* product table */}
       <div className="py-5">
-        <ProductTable />
+        {initItems.length > 0 ? (
+          <ProductTable />
+        ) : (
+          <p className="text-2xl text-red-500">Your cart is empty!</p>
+        )}
       </div>
       {/* cart totals */}
       <div className="grid gap-40 py-10 my-5 sm:grid-cols-2">
