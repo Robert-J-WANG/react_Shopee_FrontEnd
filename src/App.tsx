@@ -15,24 +15,24 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path="/react_Shoppia/" element={<Shop />} />
+        <Route path="/" element={<Shop />} />
         <Route
-          path="/react_Shoppia/men"
+          path="/men"
           element={<ShopCategory banner={banner_mens} category="men" />}
         />
         <Route
-          path="/react_Shoppia/women"
+          path="/women"
           element={<ShopCategory banner={banner_women} category="women" />}
         />
         <Route
-          path="/react_Shoppia/kids"
+          path="/kids"
           element={<ShopCategory banner={banner_kids} category="kids" />}
         />
-        <Route path="/react_Shoppia/product" element={<Product />}>
-          <Route path="react_Shoppia/:productId" element={<Product />} />
+        <Route path="/product" element={<Product />}>
+          <Route path=":productId" element={<Product />} />
         </Route>
-        <Route path="/react_Shoppia/cart" element={<Cart />} />
-        <Route path="/react_Shoppia/loginSignup/*" element={<LoginSignup />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/loginSignup/*" element={<LoginSignup />} />
       </Routes>
       <Footer />
     </>
