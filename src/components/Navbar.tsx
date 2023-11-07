@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import cart_icon from "@/assets/cart_icon.png";
 import logo from "@/assets/logo.png";
