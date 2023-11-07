@@ -1,3 +1,4 @@
+import { addToCart, useCartStore } from "@/stores/cartStore";
 import { selectSize, useProductStore } from "@/stores/productStore";
 import { formatCurrency } from "@/utils/formatCurrency";
 
@@ -5,6 +6,8 @@ export const ProductDisplay = () => {
   const currentProduct = useProductStore((state) => state.initItems);
   const sizeOptions = useProductStore((state) => state.sizeOptions);
   const selectedSize = useProductStore((state) => state.selectedSize);
+  // const selectedSize = useCartStore((state) => state.add);
+
   return (
     <div className="flex items-center justify-between gap-5 py-10 text-xl">
       {/* left */}
@@ -83,7 +86,10 @@ export const ProductDisplay = () => {
             ))}
           </div>
         </div>
-        <button className="w-1/2 text-xl text-white btn btn-error">
+        <button
+          className="w-1/2 text-xl text-white btn btn-error"
+          onClick={() => addToCart(currentProduct)}
+        >
           ADD TO CART
         </button>
         <div className="flex flex-col gap-3">

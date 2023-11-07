@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import cart_icon from "@/assets/cart_icon.png";
 import logo from "@/assets/logo.png";
 import { setNavMenu, toggleNavMenu, useNavMenuStore } from "@/stores/navStore";
+import { useCartStore } from "@/stores/cartStore";
 
 export const Navbar = () => {
   const navMenuItems = useNavMenuStore((state) => state.navMenuItems);
   const active = useNavMenuStore((state) => state.active);
+  const totalCount = useCartStore((state) => state.totalCount);
 
   useEffect(() => {
     setNavMenu();
@@ -52,7 +54,7 @@ export const Navbar = () => {
           </Link>
 
           <span className="flex items-center justify-center w-6 h-6 text-sm text-white bg-red-500 rounded-lg -ml-9 -mt-9 ">
-            0
+            {totalCount}
           </span>
         </div>
       </div>

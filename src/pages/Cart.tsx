@@ -1,6 +1,10 @@
 import { ProductTable } from "@/components/ProductTable";
+import { useCartStore } from "@/stores/cartStore";
+import { formatCurrency } from "@/utils/formatCurrency";
 
 export const Cart = () => {
+  const totalPrice = useCartStore((state) => state.totalPrice);
+  const shipFees = useCartStore((state) => state.shipFees);
   return (
     <div className="container py-10 ">
       {/* product table */}
@@ -14,15 +18,15 @@ export const Cart = () => {
           <h1 className="text-3xl font-bold">Cart Totals</h1>
           <p className="flex justify-between py-4 text-2xl text-gray-500 border-b border-gray-500">
             <span>Subtotal</span>
-            <span>$164</span>
+            <span>{formatCurrency(totalPrice)}</span>
           </p>
           <p className="flex justify-between py-4 text-2xl text-gray-500 border-b border-gray-500">
             <span>Shipping Fees</span>
-            <span>Free</span>
+            <span>{shipFees === 0 ? "Free" : shipFees}</span>
           </p>
           <p className="flex justify-between py-4 text-2xl font-medium ">
             <span>Total</span>
-            <span>$164</span>
+            <span>{formatCurrency(totalPrice + shipFees)}</span>
           </p>
           <button className="my-4 text-xl text-white btn btn-error">
             proceed to checkout

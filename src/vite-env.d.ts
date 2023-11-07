@@ -33,3 +33,13 @@ type TProductItem = {
   tags: string;
   size: string;
 };
+
+type TCartItem = {
+  id: string;
+  data_id: number;
+  name: string;
+  image: string;
+  price: number;
+  size: string;
+  count: number;
+};

@@ -1,6 +1,9 @@
-import procuct_1 from "@/assets/product_1.png";
+import { decreaseItem, increaseItem, useCartStore } from "@/stores/cartStore";
+import { formatCurrency } from "@/utils/formatCurrency";
 import { CiSquareRemove } from "react-icons/ci";
+import { removeItem } from "../stores/cartStore";
 export const ProductTable = () => {
+  const cartItems = useCartStore((state) => state.initItems);
   return (
     <div className="overflow-x-auto">
       <table className="table text-xl">
@@ -9,6 +12,7 @@ export const ProductTable = () => {
           <tr className="text-xl">
             <th>Products</th>
             <th>Title</th>
+            <th>Size</th>
             <th>Price</th>
             <th>Quanity</th>
             <th>Total</th>
@@ -16,31 +20,46 @@ export const ProductTable = () => {
           </tr>
         </thead>
         <tbody>
-          {/* row 1 */}
-          <tr>
-            <td>
-              <div className="flex items-center space-x-3">
-                <div className="avatar">
-                  <div className="w-14 mask mask-squircle">
-                    <img src={procuct_1} alt="/" />
+          {cartItems.map((cartItem) => (
+            <tr key={cartItem.id}>
+              <td>
+                <div className="flex items-center space-x-3">
+                  <div className="avatar">
+                    <div className="w-14 mask mask-squircle">
+                      <img src={cartItem.image} alt="/" />
+                    </div>
                   </div>
                 </div>
-              </div>
-            </td>
-            <td>Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket</td>
-            <td>99</td>
-            <td>
-              <div>
-                <button className="text-2xl btn">+</button>
-                <span className="mx-5">5</span>
-                <button className="text-2xl btn">-</button>
-              </div>
-            </td>
-            <td>1</td>
-            <td>
-              <CiSquareRemove size={40} />
-            </td>
-          </tr>
+              </td>
+              <td>{cartItem.name}</td>
+              <td>{cartItem.size}</td>
+              <td>{formatCurrency(cartItem.price)}</td>
+              <td>
+                <div>
+                  <button
+                    className="text-2xl btn"
+                    onClick={() => increaseItem(cartItem.id)}
+                  >
+                    +
+                  </button>
+                  <span className="mx-5">{cartItem.count}</span>
+                  <button
+                    className="text-2xl btn"
+                    onClick={() => decreaseItem(cartItem.id)}
+                  >
+                    -
+                  </button>
+                </div>
+              </td>
+              <td>{formatCurrency(cartItem.price * cartItem.count)}</td>
+              <td>
+                <CiSquareRemove
+                  size={40}
+                  onClick={() => removeItem(cartItem.id)}
+                />
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
