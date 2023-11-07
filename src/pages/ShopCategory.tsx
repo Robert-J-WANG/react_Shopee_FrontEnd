@@ -24,7 +24,7 @@ export const ShopCategory = (props: Tprops) => {
       {/* banner image */}
       <img src={props.banner} alt="/" />
       {/* dropdown */}
-      <div className="py-5 text-lg navbar rounded-box">
+      <div className="py-5 text-sm md:text-base lg:text-lg navbar rounded-box">
         <div className="flex-1 gap-2 px-2 lg:flex-none">
           <span className="font-bold">Showing 1-12 </span>
           {"  "}

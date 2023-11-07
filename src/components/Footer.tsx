@@ -2,7 +2,7 @@ import logo from "@/assets/logo.png";
 export const Footer = () => {
   return (
     <div className="flex items-center justify-center">
-      <footer className="p-10 text-lg rounded footer footer-center bg-base-200 text-base-content">
+      <footer className="p-10 rounded md:text-lg footer footer-center bg-base-200 text-base-content">
         <div className="flex items-center justify-center gap-5">
           <img src={logo} alt="" className="w-12" />
           <p className="text-2xl font-bold">SHOPPIA</p>

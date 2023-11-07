@@ -6,16 +6,16 @@ export const ProductTable = () => {
   const cartItems = useCartStore((state) => state.initItems);
   return (
     <div className="overflow-x-auto">
-      <table className="table text-xl">
+      <table className="table text-sm lg:text-xl md:text-lg sm:text-base">
         {/* head */}
         <thead>
-          <tr className="text-xl">
+          <tr className="text-sm lg:text-xl md:text-lg sm:text-base">
             <th>Products</th>
             <th>Title</th>
             <th>Size</th>
             <th>Price</th>
             <th>Quanity</th>
-            <th>Total</th>
+            <th className="hidden md:block">Total</th>
             <th>Remove</th>
           </tr>
         </thead>
@@ -23,7 +23,7 @@ export const ProductTable = () => {
           {cartItems.map((cartItem) => (
             <tr key={cartItem.id}>
               <td>
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center">
                   <div className="avatar">
                     <div className="w-14 mask mask-squircle">
                       <img src={cartItem.image} alt="/" />
@@ -51,7 +51,9 @@ export const ProductTable = () => {
                   </button>
                 </div>
               </td>
-              <td>{formatCurrency(cartItem.price * cartItem.count)}</td>
+              <td className="hidden md:block">
+                {formatCurrency(cartItem.price * cartItem.count)}
+              </td>
               <td>
                 <CiSquareRemove
                   size={40}

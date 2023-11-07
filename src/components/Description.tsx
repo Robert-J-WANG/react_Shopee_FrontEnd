@@ -3,7 +3,7 @@ import { activeTabs, useProductStore } from "@/stores/productStore";
 export const Description = () => {
   const tabActive = useProductStore((state) => state.tabActive);
   return (
-    <div className="text-xl">
+    <div className="lg:text-xl ">
       {/* tabs */}
       <div className="mt-10 tabs" onClick={(event) => activeTabs(event)}>
         <a className="text-xl border border-gray-400 tab tab-lifted tab-active">
