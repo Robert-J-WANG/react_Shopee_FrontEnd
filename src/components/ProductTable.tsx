@@ -37,14 +37,14 @@ export const ProductTable = () => {
               <td>
                 <div>
                   <button
-                    className="text-2xl btn"
+                    className="text-lg md:text-xl lg:text-2xl btn"
                     onClick={() => increaseItem(cartItem.id)}
                   >
                     +
                   </button>
                   <span className="mx-5">{cartItem.count}</span>
                   <button
-                    className="text-2xl btn"
+                    className="text-lg md:text-xl lg:text-2xl btn"
                     onClick={() => decreaseItem(cartItem.id)}
                   >
                     -
