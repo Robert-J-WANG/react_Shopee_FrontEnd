@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Item } from "./Item";
 import { setInitData, useCollectionStore } from "@/stores/collectionStore";
-import Title from "@/widgets/Title.jsx";
+import Title from "@/widgets/Title.js";
 
 export const NewCollections = () => {
   const initItems = useCollectionStore((state) => state.initItems);

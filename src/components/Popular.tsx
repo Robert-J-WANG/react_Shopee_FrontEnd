@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Item } from "./Item";
 import { setInitData, usePopularStore } from "@/stores/popularStore";
-import Title from "@/widgets/Title.jsx";
+import Title from "@/widgets/Title.js";
 
 export const Popular = () => {
   const initItems = usePopularStore((state) => state.initItems);
