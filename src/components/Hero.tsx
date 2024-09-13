@@ -4,15 +4,15 @@ import hero_image from "@/assets/hero_image.png";
 
 export const Hero = () => {
   return (
-    <div className=" bg-gradient-to-br from-pink-700/30 to-bg-gray-200">
-      <div className="container flex ">
+    <div className=" bg-gradient-to-br from-purple-700/30 to-bg-gray-200">
+      <div className="container flex items-center justify-center md:gap-14 xl:gap-20">
         {/* left */}
-        <div className="flex items-center justify-center basis-1/2 ">
-          <div className="flex flex-col justify-center gap-4 xl:gap-12 lg:gap-10 md:gap-8 sm:gap-6">
-            <h2 className="text-lg xl:text-4xl lg:text-3xl md:text-2xl">
+        <div className="flex items-center justify-end ">
+          <div className="flex flex-col justify-center gap-10 ">
+            <h2 className="text-lg xl:text-3xl lg:text-2xl md:text-xl">
               NEW ARRIVALS ONLY
             </h2>
-            <div className="flex flex-col gap-2 text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+            <div className="flex flex-col gap-2 text-2xl font-bold md:text-3xl lg:text-4xl xl:text-5xl">
               {/* hand-hand-icon */}
               <div className="flex gap-2">
                 <p>new</p>
@@ -26,17 +26,17 @@ export const Hero = () => {
               <p>for everyone</p>
             </div>
             {/* latest button */}
-            <button className="w-56 text-white bg-red-500 rounded-full h-14 sm:w-64 md:w-72 lg:w-80 xl:w-[400px] btn">
-              <div className="sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
+            <button className="px-5 py-2 text-white bg-red-500 rounded-full btn">
+              <div className="text-xs md:text-base lg:text-lg xl:text-xl">
                 Latest Collections
               </div>
-              <img src={arrow} alt="" />
+              <img className="hidden sm:block" src={arrow} alt="" />
             </button>
           </div>
         </div>
         {/* hero right */}
-        <div className="flex items-center justify-center basis-1/2">
-          <img src={hero_image} alt="" />
+        <div className="flex items-center justify-start ">
+          <img className="h-full" src={hero_image} alt="" />
         </div>
       </div>
     </div>
