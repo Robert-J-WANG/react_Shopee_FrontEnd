@@ -5,7 +5,7 @@ export const BreadCrumbs = () => {
   const currentProduct = useProductStore((state) => state.initItems);
   return (
     <div>
-      <div className="text-sm lg:text-lg md:text-base breadcrumbs ">
+      <div className="text-sm lg:text-lg md:text-base breadcrumbs">
         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -18,7 +18,7 @@ export const BreadCrumbs = () => {
               {currentProduct!.category}
             </Link>
           </li>
-          <li>{currentProduct!.name}</li>
+          <li className="truncate">{currentProduct!.name}</li>
         </ul>
       </div>
     </div>

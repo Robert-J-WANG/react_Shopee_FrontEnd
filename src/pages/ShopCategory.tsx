@@ -20,7 +20,7 @@ export const ShopCategory = (props: Tprops) => {
     setInitData();
   }, []);
   return (
-    <div className="container py-10">
+    <div className="container py-10 2xl:max-w-[1280px]">
       {/* banner image */}
       <img src={props.banner} alt="/" />
       {/* dropdown */}
@@ -53,7 +53,7 @@ export const ShopCategory = (props: Tprops) => {
       </div>
 
       {/* products list */}
-      <ul className="grid justify-center gap-10 mb-10 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 place-content-center place-items-center ">
+      <ul className="grid justify-center gap-10 mb-10 md:grid-cols-2 xl:grid-cols-3 place-content-center place-items-center ">
         {shopItems.map((item) => (
           <Item key={item.id} item={item} />
         ))}

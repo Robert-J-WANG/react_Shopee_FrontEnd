@@ -17,7 +17,7 @@ export const Product = () => {
   }, []);
   return (
     <div>
-      <div className="container py-10 ">
+      <div className="container py-10 2xl:max-w-[1280px]">
         {/* breadcrumbs */}
         <BreadCrumbs />
         {/* product details */}

@@ -7,7 +7,7 @@ export const Cart = () => {
   const totalPrice = useCartStore((state) => state.totalPrice);
   const shipFees = useCartStore((state) => state.shipFees);
   return (
-    <div className="container py-10 ">
+    <div className="container py-10 2xl:max-w-[1280px]">
       {/* product table */}
       <div className="py-5">
         {initItems.length > 0 ? (

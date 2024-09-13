@@ -25,13 +25,13 @@ let popular_women = [
     new_price: 60.0,
     old_price: 100.5,
   },
-  {
-    id: 4,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
-    image: p4_img,
-    new_price: 100.0,
-    old_price: 150.0,
-  },
+  // {
+  //   id: 4,
+  //   name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+  //   image: p4_img,
+  //   new_price: 100.0,
+  //   old_price: 150.0,
+  // },
 ];
 
 export default popular_women;

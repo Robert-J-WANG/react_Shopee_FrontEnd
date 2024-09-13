@@ -9,7 +9,7 @@ export const Hero = () => {
         {/* left */}
         <div className="flex items-center justify-center basis-1/2 ">
           <div className="flex flex-col justify-center gap-4 xl:gap-12 lg:gap-10 md:gap-8 sm:gap-6">
-            <h2 className="xl:text-3xl lg:text-2xl md:text-xl ms:text-lg">
+            <h2 className="text-lg xl:text-4xl lg:text-3xl md:text-2xl">
               NEW ARRIVALS ONLY
             </h2>
             <div className="flex flex-col gap-2 text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">

@@ -35,14 +35,14 @@ export const ProductTable = () => {
               <td>{cartItem.size}</td>
               <td>{formatCurrency(cartItem.price)}</td>
               <td>
-                <div>
+                <div className="flex items-center justify-center gap-2 ">
                   <button
                     className="text-lg md:text-xl lg:text-2xl btn"
                     onClick={() => increaseItem(cartItem.id)}
                   >
                     +
                   </button>
-                  <span className="mx-5">{cartItem.count}</span>
+                  <span>{cartItem.count}</span>
                   <button
                     className="text-lg md:text-xl lg:text-2xl btn"
                     onClick={() => decreaseItem(cartItem.id)}

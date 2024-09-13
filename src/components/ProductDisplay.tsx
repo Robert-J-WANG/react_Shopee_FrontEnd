@@ -24,35 +24,14 @@ export const ProductDisplay = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-between gap-10 py-10 text-xl md:flex-row">
+    <div className="flex flex-col items-center justify-between gap-4 py-10 text-xl lg:gap-10 md:flex-row">
       {/* left */}
-      <div className="flex items-center justify-center gap-4 basis-1/2">
-        {/* image lists */}
-        <div className="flex flex-col items-center justify-center gap-5 basis-1/5">
-          <img
-            src={currentProduct.image}
-            alt=""
-            className="object-cover h-full"
-          />
-          <img
-            src={currentProduct.image}
-            alt=""
-            className="object-cover h-full"
-          />
-          <img
-            src={currentProduct.image}
-            alt=""
-            className="object-cover h-full"
-          />
-        </div>
-        {/* image */}
-        <div className="flex basis-4/5  h-[572px] justify-center items-center ">
-          <img
-            src={currentProduct.image}
-            alt="/"
-            className="object-cover h-full"
-          />
-        </div>
+      <div className="flex basis-1/2 h-[572px] justify-center items-center ">
+        <img
+          src={currentProduct.image}
+          alt="/"
+          className="object-cover h-full"
+        />
       </div>
       {/* right */}
       <div className="flex flex-col gap-5 md:gap-8 lg:gap-10 basis-1/2">

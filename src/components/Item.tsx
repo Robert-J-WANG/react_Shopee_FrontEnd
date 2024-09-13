@@ -13,7 +13,7 @@ export const Item = ({ item }: Tprops) => {
     >
       <div className="shadow-xl card max-w-[350px] bg-base-100 hover:scale-105 duration-500 cursor-pointer">
         <figure>
-          <img src={item?.image} alt="Shoes" className="object-cover w-full" />
+          <img src={item?.image} alt="Shoes" className="object-cover w-full " />
         </figure>
         <div className="card-body">
           <h2 className="card-title">
