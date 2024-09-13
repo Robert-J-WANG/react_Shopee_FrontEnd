@@ -2,7 +2,7 @@ import p1_img from "./product_1.png";
 import p2_img from "./product_2.png";
 import p3_img from "./product_3.png";
 
-let popular_women = [
+const popular_women = [
   {
     id: 1,
     name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
