@@ -9,12 +9,10 @@ type Tprops = {
 };
 
 export const ShopCategory = (props: Tprops) => {
-  console.log(props.category);
   const initItems = useShopStore((state) => state.initItems);
   const shopItems = initItems!.filter(
     (item) => item.category === props.category
   );
-  console.log(shopItems);
 
   useEffect(() => {
     setInitData();
@@ -53,7 +51,7 @@ export const ShopCategory = (props: Tprops) => {
       </div>
 
       {/* products list */}
-      <ul className="grid justify-center gap-10 mb-10 md:grid-cols-2 xl:grid-cols-3 place-content-center place-items-center ">
+      <ul className="grid justify-center mx-auto gap-10 mb-10 md:grid-cols-2 lg:grid-cols-3 place-content-center place-items-center max-w-[1024px]">
         {shopItems.map((item) => (
           <Item key={item.id} item={item} />
         ))}

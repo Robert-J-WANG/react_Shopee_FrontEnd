@@ -11,7 +11,7 @@ export const Item = ({ item }: Tprops) => {
       to={`/react_Shoppia/product/${item.id}`}
       onClick={() => window.scrollTo(0, 0)}
     >
-      <div className="shadow-xl card max-w-[350px] bg-base-100 hover:scale-105 duration-500 cursor-pointer">
+      <div className="shadow-xl card w-[300px] h-[500px] bg-base-100 hover:scale-105 duration-500 cursor-pointer">
         <figure>
           <img src={item?.image} alt="Shoes" className="object-cover w-full " />
         </figure>
